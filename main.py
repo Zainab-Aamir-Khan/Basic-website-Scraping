@@ -22,7 +22,7 @@ htmlContent = r.content
 soup = BeautifulSoup(htmlContent, 'html.parser')
 # print(soup.prettify())
 
-# Step : 3 HTML tree traversal
+# Step : 4 HTML tree traversal
 title = soup.title
 #commonly used type objects
 # print(type(title)) # 1.title
@@ -36,17 +36,34 @@ print(title)
 # paras = soup.find_all('p')
 # print(paras)
 
-#get all the anchor tags of the page
-# anchor = soup.find_all('a')
-# print(anchor)
 
 #get the first paragraph of the page
 # print(soup.find('p'))
-firstPara = soup.find('p')
-print(firstPara.text)
+# firstPara = soup.find('p')
+# print(firstPara.text)
 
 #get the class of the any element in HTML page
-print(soup.find('p')['class'])
+# print(soup.find('p')['class'])
+# print(soup.find('h2')['class'])
+
+
+# #find all the elements with class lead
+# print(soup.find_all('p', class_='lead'))
+
+# #to find the text of a particular element
+# print(soup.find('p').get_text())
+
+# #to get all the text content of the html page
+# print(soup.get_text())
+
+# # get all the anchor tags of the page
+anchor = soup.find_all('a')
+# print(anchor)
+for links in anchor:
+    print(links.get('href'))
+
+
+
 
 
 
